@@ -3,6 +3,8 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const LoversGo = require('./utils/lovers')
+const bodyParser = require('body-parser')
+
 
 // Loads env variables
 require('dotenv').config()
@@ -24,6 +26,9 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(path.join(__dirname, '../public')))
+app.use(bodyParser())
+
+
 
 // Creates base URL route "/" and render index view
 app.get('', (req,res) => {
@@ -34,6 +39,7 @@ app.get('', (req,res) => {
 
 // Creates lover meter endpoint
 app.post('/lovers', async (req, res) => {
+    
     const {
         yourName,
         theirName

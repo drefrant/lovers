@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const BASE_URL = 'https://love-calculator.p.rapidapi.com/getPercentage'
+const BASE_URL = 'https://love-calculator.p.rapidapi.com'
 
 module.exports = {
     getLovers: (yourName, theirName) => 

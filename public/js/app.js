@@ -35,7 +35,7 @@ info.addEventListener('submit', (e) => {
             if (data.error) {
                 messageOne.textContent = data.error;
             } else {
-                messageOne.textContent = data.percentage;
+                messageOne.textContent = data.percentage + ' %';
                 messageTwo.textContent = data.result;
             }
         })
